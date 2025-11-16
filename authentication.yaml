@@ -1,0 +1,39 @@
+server:
+  port: 8083
+  servlet:
+    context-path: /authentication
+
+spring:
+  data:
+    redis:
+      host: localhost
+      port: 6379
+
+  application:
+    name: AUTHENTICATION-SERVICE
+
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/authentication_service
+    username: root
+    password: 123456
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+
+jwt:
+  secret-key: f98e86b0b39a52c158fc17480190f2c6730784354aa84e8277d15ea3b366922c1407335b9df91ac20e592b50f893de8a6c8163454e13c681edd40ed11581a2a3
+
+oauth2:
+  google:
+    client-id: ${CLIENT_ID:1}
+    client-secret: ${CLIENT_SECRET:1}
+    redirect-uri: ${REDIRECT_URI:http://localhost:3000/oauth/callback/google}
+
+eureka:
+  instance:
+    hostname: localhost
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
