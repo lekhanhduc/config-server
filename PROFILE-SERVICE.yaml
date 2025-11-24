@@ -11,8 +11,6 @@ spring:
     hibernate:
       ddl-auto: update
 eureka:
-  instance:
-    hostname: localhost
   client:
     serviceUrl:
       defaultZone: http://eureka-server:8761/eureka/
